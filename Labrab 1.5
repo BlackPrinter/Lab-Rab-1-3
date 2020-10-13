@@ -1,0 +1,96 @@
+// 5. Ввести три целых числа с консоли. Вывести на экран наименьшее из них.
+
+import java.util.Scanner;
+import java.util.Locale;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        System.out.println("Введите первое целое число:");
+        Scanner sc = new Scanner(System.in);
+        sc.useLocale(Locale.ENGLISH); // Ввел эту срочку, чтобы нецелое число писалось с точкой а не запятой.
+        double a = sc.nextDouble();
+        int b = 0;
+        while (b<=0)
+        {
+            if (a % 1 != 0)
+            {
+                System.out.println("Вы ввели не целое число");
+                System.out.println("Попробуйте снова");
+                System.out.println("Введите целое число:");
+                Scanner sc2 = new Scanner(System.in);
+                sc2.useLocale(Locale.ENGLISH);
+                a = sc2.nextDouble();
+            }
+            if (a % 1 == 0)
+            {
+                System.out.println("Вы ввели целое число");
+                System.out.println("Это число равно:" + a);
+                b= b+1;
+            }
+        }
+
+
+        System.out.println("Введите второе целое число:");
+        Scanner sc3 = new Scanner(System.in);
+        sc3.useLocale(Locale.ENGLISH); // Ввел эту срочку, чтобы нецелое число писалось с точкой а не запятой.
+        double a2 = sc3.nextDouble();
+        int b2 = 0;
+        while (b2<=0)
+        {
+            if (a2 % 1 != 0)
+            {
+                System.out.println("Вы ввели не целое число");
+                System.out.println("Попробуйте снова");
+                System.out.println("Введите целое число:");
+                Scanner sc4 = new Scanner(System.in);
+                sc4.useLocale(Locale.ENGLISH);
+                a2 = sc4.nextDouble();
+            }
+            if (a2 % 1 == 0)
+            {
+                System.out.println("Вы ввели целое число");
+                System.out.println("Это число равно:" + a2);
+                b2= b2+1;
+            }
+        }
+
+
+        System.out.println("Введите третье целое число:");
+        Scanner sc5 = new Scanner(System.in);
+        sc5.useLocale(Locale.ENGLISH); // Ввел эту срочку, чтобы нецелое число писалось с точкой а не запятой.
+        double a3 = sc5.nextDouble();
+        int b3 = 0;
+        while (b3<=0)
+        {
+            if (a3 % 1 != 0)
+            {
+                System.out.println("Вы ввели не целое число");
+                System.out.println("Попробуйте снова");
+                System.out.println("Введите целое число:");
+                Scanner sc6 = new Scanner(System.in);
+                sc6.useLocale(Locale.ENGLISH);
+                a3 = sc6.nextDouble();
+            }
+            if (a3 % 1 == 0)
+            {
+                System.out.println("Вы ввели целое число");
+                System.out.println("Это число равно:" + a3);
+                b3= b3+1;
+            }
+        }
+        System.out.println("Итого");
+        System.out.println("Первое число равно:" + a);
+        System.out.println("Второе число равно:" + a2);
+        System.out.println("Третье число равно:" + a3);
+        double v = 0;
+        if (a < a2 && a < a3) {
+            v=a;
+        } else if (a2 < a && a2 < a3) {
+            v=a2;
+        } else {
+            v=a3;
+        }
+        System.out.println("Наименьшее из трех чисел равно:" + v );
+    }
+}
