@@ -1,0 +1,67 @@
+// 6. Ввести целое число в консоли. Вывести его строку-описание вида «отрицательное четное число», «нулевое число»,
+// «положительное нечетное число» и т. д.
+
+import java.util.Scanner;
+import java.util.Locale;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        System.out.println("Введите первое целое число:");
+        Scanner sc = new Scanner(System.in);
+        sc.useLocale(Locale.ENGLISH); // Ввел эту срочку, чтобы нецелое число писалось с точкой а не запятой.
+        double a = sc.nextDouble();
+        int b = 0;
+        while (b<=0)
+        {
+            if (a % 1 != 0)
+            {
+                System.out.println("Вы ввели не целое число");
+                System.out.println("Попробуйте снова");
+                System.out.println("Введите целое число:");
+                Scanner sc2 = new Scanner(System.in);
+                sc2.useLocale(Locale.ENGLISH);
+                a = sc2.nextDouble();
+            }
+            if (a % 1 == 0)
+            {
+                System.out.println("Вы ввели целое число");
+                System.out.println("Это число равно: " + a);
+                b= b+1;
+            }
+
+        }
+
+        if (a == 0)
+        {
+        String p = "Это ноль,братан, - это все его свойства";
+        System.out.println(p);
+
+        }
+        else {
+
+            String p1 = "Это число целое, ";
+            String p2 = " ";
+            String p3 = " ";
+            if (a > 0)
+            {
+                p2="положительное, ";
+            }
+            else if (a<0)
+            {
+                p2="отрицательное, ";
+            }
+
+            if (a % 2 != 0)
+            {
+                p3="нечетное. ";
+            }
+            else
+                {
+                p3="четное. ";
+            }
+            System.out.println(p1+p2+p3);
+            }
+
+    }
+}
