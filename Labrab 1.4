@@ -1,0 +1,55 @@
+// Ввести целое число в консоли. Если оно является положительным, то прибавить к нему 1;
+// если отрицательным, то вычесть из него 2; если нулевым, то заменить его на 10.
+// Вывести полученное число.
+
+import java.util.Scanner;
+import java.util.Locale;
+public class Main
+{
+    public static void main(String[] args)
+    {
+
+        System.out.println("Введите целое число:");
+        Scanner sc = new Scanner(System.in);
+        sc.useLocale(Locale.ENGLISH); // Ввел эту срочку, чтобы нецелое число писалось с точкой а не запятой.
+        double a = sc.nextDouble();
+        int b = 0;
+        while (b<=0)
+        {
+            if (a % 1 != 0)
+            {
+                System.out.println("Вы ввели не целое число");
+                System.out.println("Попробуйте снова");
+                System.out.println("Введите целое число:");
+                Scanner sc2 = new Scanner(System.in);
+                sc2.useLocale(Locale.ENGLISH);
+                a = sc2.nextDouble();
+            }
+            if (a % 1 == 0)
+            {
+                System.out.println("Вы ввели целое число");
+                System.out.println("Это число равно:" + a);
+                b= b+1;
+            }
+        }
+        sc.close();
+        double v = a;
+        if (v>0)
+        {
+            System.out.println("Число положительное");
+            v = v+1;
+
+        }
+        if (v==0)
+        {
+            System.out.println("Число равно нулю");
+            v = 10;
+        }
+        if (v<0)
+        {
+            System.out.println("Число отрицательное");
+            v = v-2;
+        }
+        System.out.println("После этой жизни тяжелой это число равно:" + v);
+    }
+}
