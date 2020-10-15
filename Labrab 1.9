@@ -1,0 +1,33 @@
+// Дан массив целых чисел: [15,10,51,-6,-5,3,-10,-34,0,32,56,-12,24,-52].
+// Переставить элементы массива в обратном порядке. Вывести результат в консоль
+
+import java.util.Arrays;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int[] myArray = new int[] { 15 , 10 , 51 , -6 , -5 , 3 , -10 , -34 , 0 , 32 , 56 , -12 , 24 , -52 };
+        System.out.println("Исходный массив:");
+        for (int i=0; i<myArray.length; i++)
+        {
+            System.out.print(myArray[i] + " ");
+        }
+        System.out.println("");
+        //Переменная, которая будет использоваться при обмене элементов
+        int temp;
+
+        int n = myArray.length;
+        for (int i = 0; i < n/2; i++)
+        {
+            temp = myArray[n-i-1];
+            myArray[n-i-1] = myArray[i];
+            myArray[i] = temp;
+        }
+        //Выводим конечный массив в консоль
+        System.out.println("Массив наобороот:");
+        for (int i=0; i<myArray.length; i++)
+        {
+            System.out.print(myArray[i] + " ");
+        }
+    }
+}
