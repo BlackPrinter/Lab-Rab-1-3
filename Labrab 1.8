@@ -1,0 +1,67 @@
+// 8. Дан массив целых чисел: [1,-10,5,6,45,23,-45,-34,0,32,56,-1,2,-2].
+// Для данного массива найти и вывести на экран:
+
+import java.util.Arrays;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int[] myArray = new int[] { 1,-10,5,6,45,23,-45,-34,0,32,56,-1,2,-2 };
+        System.out.println("Наш массив таков:");
+        for (int i = 0; i < 13; i++)
+        {
+        System.out.println(myArray[i]);
+        }
+
+        //  - максимальное значение
+        System.out.println("Найдем самый большой элемент массива");
+        double max = 0;
+        Arrays.sort(myArray);
+        max = myArray[myArray.length - 1];
+        System.out.println("Самый большой элемент массива равен: " + max);
+
+        //   - сумму положительных элементов и количество положительных элементов
+        System.out.println("Найдем сумму положительных элементов массива и  их колличество");
+        int sum = 0;
+        int kol = 0;
+        for (int i = 0; i < myArray.length; i++)
+        {
+            if (myArray[i] > 0)
+            {
+                sum += myArray[i];
+                kol = kol + 1;
+            }
+        }
+        System.out.println("Сумма положительных элементов массива равна: " + sum);
+        System.out.println("Количество положительных элементов массива равна: " + kol);
+
+        //   - сумму четных отрицательных элементов
+        System.out.println("Найдем сумму четных отричательных элементов массива ");
+        int sum2 = 0;
+        for (int i = 0; i < myArray.length; i++)
+        {
+            if (myArray[i] < 0 && myArray[i] % 2 == 0 )
+            {
+                sum2 += myArray[i];
+            }
+        }
+        System.out.println("Сумма четных отрицательных элементов массива равна: " + sum2);
+
+        // - среднее арифметическое отрицательных элементов
+        System.out.println("Найдем среднее арифметическое отрицательных элементов массива ");
+        int sum3 = 0;
+        int kol2 = 0;
+        int v = 0;
+        for (int i = 0; i < myArray.length; i++)
+        {
+            if (myArray[i] < 0 )
+            {
+                sum3 += myArray[i];
+                kol2 = kol2 + 1;
+
+            }
+            v = sum3/kol2;
+        }
+            System.out.println("Cреднее арифметическое отрицательных элементов массива равна: " + v);
+    }
+}
