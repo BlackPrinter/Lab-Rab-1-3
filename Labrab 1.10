@@ -1,0 +1,46 @@
+//10. Дан массив целых чисел: [15,10,0,-6,-5,3,0,-34,0,32,56,0,24,-52].
+ //       Переместить нули в конец массива. Вывести результат в консоль
+
+import java.util.Arrays;
+import java.io.*;
+
+public class Main
+{
+    static void pushZerosToEnd(int myArray[], int n)
+    {
+        int count = 0;
+        for (int i = 0; i < n; i++)
+        {
+            if (myArray[i] != 0)
+            {
+                myArray[count++] = myArray[i];
+            }
+        }
+        while (count < n)
+        {
+
+            myArray[count++] = 0;
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        int[] myArray = new int[] { 15 , 10 , 0 , -6 , -5 , 3 , 0 , -34 , 0 , 32 , 56 , 0 , 24 , -52 };
+        System.out.println("Исходный массив:");
+        for (int i=0; i<myArray.length; i++)
+        {
+            System.out.print(myArray[i] + " ");
+        }
+        System.out.println("");
+        int n = myArray.length;
+
+        pushZerosToEnd(myArray, n);
+
+        System.out.println("Массив со смещенными нулями");
+        for (int i=0; i<myArray.length; i++)
+        {
+            System.out.print(myArray[i] + " ");
+        }
+
+    }
+}
